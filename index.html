@@ -326,7 +326,55 @@ footer a { color: var(--cyan); text-decoration: none; }
   .logo { font-size: 16px; }
   h1 { letter-spacing: -1px; }
 }
-</style>
+
+/* KELUZ glowing animations */
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px #12e2f3, 0 0 35px #168bff66;
+}
+
+.card {
+  transition: transform 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: #12e2f3;
+  box-shadow: 0 0 22px #168bff30;
+}
+
+.logo-mark {
+  text-shadow: 0 0 18px #12e2f388;
+  animation: keluzGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes keluzGlow {
+  from {
+    text-shadow: 0 0 8px #12e2f355;
+  }
+  to {
+    text-shadow: 0 0 25px #12e2f3, 0 0 40px #168bff77;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+	}
+						   </style>
 </head>
 
 <body>
