@@ -2,126 +2,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KELUZ Web Development creates modern, mobile-friendly websites for businesses.">
-  <title>KELUZ Web Development</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #08111f;
-      color: white;
-      line-height: 1.6;
-    }
-    header {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #101d31;
-      flex-wrap: wrap;
-    }
-    .logo { color: #42e8cf; font-size: 21px; font-weight: bold; }
-    nav a { color: white; margin-left: 12px; text-decoration: none; }
-    .hero { text-align: center; padding: 75px 20px; }
-    .hero h1 { font-size: clamp(34px, 8vw, 56px); line-height: 1.15; }
-    .hero span { color: #42e8cf; }
-    .hero p { max-width: 580px; margin: 20px auto; color: #c4d0df; }
-    .btn {
-      display: inline-block; padding: 12px 20px; margin: 8px;
-      border-radius: 8px; background: #42e8cf; color: #08111f;
-      text-decoration: none; font-weight: bold;
-    }
-    section { padding: 45px 20px; max-width: 1000px; margin: auto; }
-    h2 { text-align: center; color: #42e8cf; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 18px; }
-    .card { background: #14233a; padding: 22px; border-radius: 14px; }
-    .card h3 { color: #42e8cf; }
-    .muted { color: #c4d0df; }
-    footer { text-align: center; padding: 25px; background: #101d31; color: #c4d0df; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06101f">
+<meta name="description" content="KELUZ Web Development builds modern, responsive websites for businesses in Sierra Leone and worldwide.">
+<title>KELUZ Web Development | Your Vision Online</title>
+
+<style>
+:root {
+  --bg: #030a16;
+  --panel: #071529;
+  --card: #0a1b31;
+  --blue: #168bff;
+  --cyan: #12e2f3;
+  --text: #f4f8ff;
+  --muted: #a9bad0;
+  --border: rgba(51,181,255,.25);
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, #103b75 0, transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.65;
+}
+a { color: inherit; }
+.container { width: min(1180px, 92%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(3,10,22,.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.logo-mark {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(135deg,var(--cyan),var(--blue));
+  color: transparent;
+  background-clip: text;
+}
+.logo small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+nav { display: flex; align-items: center; gap: 22px; }
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #d9e7f8;
+}
+nav a:hover { color: var(--cyan); }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 11px 19px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(100deg,var(--blue),var(--cyan));
+  color: #03101c;
+  border: 1px solid transparent;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 25px #168bff44; }
+.btn-outline {
+  background: transparent;
+  border-color: var(--blue);
+  color: white;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 30px;
+  padding: 65px 0 45px;
+}
+.eyebrow {
+  color: var(--cyan);
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(39px,6vw,70px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+  margin: 15px 0;
+}
+.gradient-text {
+  background: linear-gradient(90deg,var(--cyan),#4d8dff);
+  background-clip: text;
+  color: transparent;
+}
+.hero p { color: var(--muted); max-width: 520px; }
+.hero-actions { margin: 25px 0; }
+.visual {
+  padding: 15px;
+  border-radius: 18px;
+  border: 1px solid #1989f766;
+  background: linear-gradient(140deg,#102f56,#040b17 70%);
+  box-shadow: 0 20px 65px #006bff26;
+  transform: rotate(1deg);
+}
+.visual-top {
+  display: flex;
+  gap: 6px;
+  padding: 6px 5px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); }
+.screen {
+  min-height: 235px;
+  padding: 25px 15px;
+  background: radial-gradient(ellipse at 80% 20%,#113c70,#030915 65%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.screen-brand { font-size: 28px; font-weight: 900; color: var(--cyan); }
+.screen-line {
+  height: 7px;
+  border-radius: 5px;
+  background: #164c7d;
+  margin: 14px 0;
+}
+.screen-line.short { width: 58%; }
+.screen-line.medium { width: 78%; }
+.screen-button {
+  display: inline-block;
+  background: linear-gradient(90deg,var(--blue),var(--cyan));
+  border-radius: 20px;
+  width: 100px;
+  height: 24px;
+  margin-top: 9px;
+}
+.code-window {
+  margin-top: 15px;
+  padding: 13px;
+  background: #020813;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #77f5df;
+  overflow-wrap: anywhere;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 25px;
+}
+.feature { padding: 18px 10px; text-align: center; }
+.feature b { display: block; font-size: 14px; }
+.feature span { font-size: 12px; color: var(--muted); }
+section { padding: 55px 0; }
+.section-heading { margin-bottom: 25px; }
+.section-heading h2 { font-size: clamp(27px,4vw,38px); margin: 0; }
+.section-heading p { color: var(--muted); margin: 5px 0; }
+.layout-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.panel, .card {
+  background: linear-gradient(145deg,#0c2039,#061122);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+.panel h2, .card h3 { margin-top: 0; }
+.muted { color: var(--muted); }
+.about-symbol {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: radial-gradient(circle,#15518a,#071529 68%);
+  border: 1px solid var(--border);
+  margin-bottom: 15px;
+}
+.about-symbol strong {
+  font-size: 90px;
+  color: var(--cyan);
+  text-shadow: 0 0 35px #168bff99;
+}
+.service-grid, .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+.card { transition: .2s; }
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+.icon {
+  font-size: 30px;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+.card h3 { font-size: 18px; margin-bottom: 7px; }
+.card p { font-size: 14px; }
+.project-preview {
+  height: 165px;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 17px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg,#e7fff8,#a8e8d5);
+  color: #124a3c;
+}
+.project-preview.dark {
+  color: white;
+  background: linear-gradient(135deg,#071326,#124b86);
+}
+.project-preview.warm {
+  color: #49301a;
+  background: linear-gradient(135deg,#fff0d8,#dfb77f);
+}
+.preview-bar {
+  font-size: 10px;
+  font-weight: bold;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #8099aa66;
+}
+.preview-title { font-size: 19px; font-weight: 900; margin-top: 19px; line-height: 1.2; }
+.preview-line { width: 75%; height: 5px; margin-top: 10px; background: currentColor; opacity: .3; border-radius: 5px; }
+.preview-line.short { width: 45%; }
+.preview-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: #168bff;
+  color: white;
+  font-size: 9px;
+}
+.project-label { color: var(--cyan); font-size: 12px; font-weight: bold; }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill {
+  padding: 8px 13px;
+  background: #0d2541;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 13px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+.contact-icon { font-size: 25px; }
+.contact-item a { color: var(--cyan); overflow-wrap: anywhere; }
+.cta {
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at top,#103f73,#071529 70%);
+  border: 1px solid var(--border);
+}
+.cta h2 { font-size: clamp(27px,4vw,38px); margin: 0; }
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+footer a { color: var(--cyan); text-decoration: none; }
+
+@media(max-width:760px) {
+  .nav { padding: 12px 0; flex-wrap: wrap; }
+  nav { width: 100%; justify-content: space-between; gap: 8px; }
+  nav a { font-size: 12px; }
+  .nav > .btn { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 42px; }
+  .visual { max-width: 520px; width: 100%; margin: auto; }
+  .features { grid-template-columns: repeat(2,1fr); }
+  .feature:nth-child(odd) { border-right: 1px solid var(--border); }
+  .layout-two, .contact-grid { grid-template-columns: 1fr; }
+  .service-grid, .portfolio-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  section { padding: 38px 0; }
+  .panel, .card { padding: 17px; }
+}
+@media(max-width:420px) {
+  .service-grid, .portfolio-grid { grid-template-columns: 1fr; }
+  .logo { font-size: 16px; }
+  h1 { letter-spacing: -1px; }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">KELUZ WEB</div>
-    <nav>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <span class="logo-mark">K</span>
+      <span>KELUZ<small>Web Development</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+    <a class="btn" href="#contact">Get a Quote ↗</a>
+  </div>
+</header>
 
-  <main>
-    <div class="hero">
-      <p>WELCOME TO KELUZ WEB DEVELOPMENT</p>
-      <h1>We Build <span>Websites</span><br>That Grow Businesses.</h1>
-      <p>Modern, attractive and mobile-friendly websites for businesses in Sierra Leone and around the world.</p>
-      <a class="btn" href="#portfolio">View My Work</a>
-      <a class="btn" href="#contact">Work With Me</a>
+<main>
+<div class="container">
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">YOUR VISION. OUR CODE.</div>
+      <h1>KELUZ<br><span class="gradient-text">Web Development</span></h1>
+      <p><strong>Modern Websites · Smart Solutions · Your Vision Online</strong></p>
+      <p>I build attractive, responsive websites that help businesses present their services, reach more customers and grow online.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#portfolio">View My Work →</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
+      </div>
+      <p>📍 Freetown, Sierra Leone · Working with clients worldwide</p>
     </div>
 
-    <section id="services">
+    <div class="visual" aria-label="Illustration of a web development workspace">
+      <div class="visual-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="screen">
+        <div class="screen-brand">KELUZ</div>
+        <div style="font-size:18px;font-weight:bold">Build Your Dream Online</div>
+        <div class="screen-line medium"></div>
+        <div class="screen-line"></div>
+        <div class="screen-line short"></div>
+        <span class="screen-button"></span>
+        <div class="code-window">
+          <div> &lt;html&gt; </div>
+          <div> &nbsp; &lt;h1&gt;Your Vision&lt;/h1&gt;</div>
+          <div> &nbsp; &lt;website&gt;Build Something Great&lt;/website&gt;</div>
+          <div> &lt;/html&gt; </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="features">
+    <div class="feature"><b>◉ Responsive Design</b><span>Works on phones and computers</span></div>
+    <div class="feature"><b>⬡ Built with Care</b><span>Clean, reliable websites</span></div>
+    <div class="feature"><b>◇ Affordable Options</b><span>Discuss your budget</span></div>
+    <div class="feature"><b>↗ Ongoing Support</b><span>Help when you need it</span></div>
+  </div>
+
+  <section id="about">
+    <div class="layout-two">
+      <div class="panel">
+        <div class="section-heading">
+          <div class="eyebrow">MEET THE DEVELOPER</div>
+          <h2>About Me</h2>
+        </div>
+        <p class="muted">I'm the developer behind KELUZ Web Development, focused on creating modern websites for businesses, organizations and individuals.</p>
+        <p class="muted">I work with tools including Acode, HTML, CSS, JavaScript and GitHub Pages to turn ideas into websites. My goal is to help businesses in Sierra Leone and beyond build a stronger online presence.</p>
+        <a class="btn" href="#contact">Let's Work Together ↗</a>
+      </div>
+      <div class="panel">
+        <div class="about-symbol"><strong>K</strong></div>
+        <h3>KELUZ Web Development</h3>
+        <p class="muted">Creative thinking. Practical technology. Websites built around your goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-heading">
+      <div class="eyebrow">WHAT I CAN DO FOR YOU</div>
       <h2>My Services</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Business Websites</h3>
-          <p class="muted">Present your business, services and contact details professionally.</p>
-        </div>
-        <div class="card">
-          <h3>Mobile-Friendly Design</h3>
-          <p class="muted">Websites designed to work across phones, tablets and computers.</p>
-        </div>
-        <div class="card">
-          <h3>Website Updates</h3>
-          <p class="muted">Improve existing websites with fresh designs and useful features.</p>
-        </div>
-      </div>
-    </section>
+      <p>Practical web solutions for your next idea.</p>
+    </div>
+    <div class="service-grid">
+      <div class="card"><div class="icon">◎</div><h3>Website Design</h3><p class="muted">Professional websites for businesses, portfolios and organizations.</p></div>
+      <div class="card"><div class="icon">&lt;/&gt;</div><h3>Web Applications</h3><p class="muted">Custom web tools and simple browser-based applications.</p></div>
+      <div class="card"><div class="icon">⚙</div><h3>Website Updates</h3><p class="muted">Improve layouts, content and existing website features.</p></div>
+      <div class="card"><div class="icon">▣</div><h3>Landing Pages</h3><p class="muted">Focused pages to introduce your business or promote a service.</p></div>
+      <div class="card"><div class="icon">⌕</div><h3>SEO Basics</h3><p class="muted">Useful page titles, descriptions and mobile-friendly structure.</p></div>
+      <div class="card"><div class="icon">☏</div><h3>Consultation</h3><p class="muted">Discuss your idea and find a practical way to begin.</p></div>
+    </div>
+  </section>
 
-    <section id="portfolio">
+  <section id="portfolio">
+    <div class="section-heading">
+      <div class="eyebrow">SELECTED PROJECTS</div>
       <h2>My Portfolio</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>NeoLife Clinic Website</h3>
-          <p class="muted">A healthcare website project featuring clinic information and services.</p>
-          <p>Project example</p>
+      <p>Real work and demonstration concepts.</p>
+    </div>
+    <div class="portfolio-grid">
+      <article class="card">
+        <div class="project-preview">
+          <div class="preview-bar">NeoLife · Healthcare</div>
+          <div class="preview-title">NeoLife<br>Modern Care Clinic</div>
+          <div class="preview-line"></div>
+          <div class="preview-line short"></div>
+          <span class="preview-tag">Clinic Website</span>
         </div>
-        <div class="card">
-          <h3>Business Website</h3>
-          <p class="muted">A demonstration project for shops and growing businesses.</p>
-          <p>Coming soon</p>
+        <div class="project-label">CLIENT PROJECT</div>
+        <h3>NeoLife Clinic</h3>
+        <p class="muted">Healthcare website featuring clinic information and services.</p>
+      </article>
+
+      <article class="card">
+        <div class="project-preview dark">
+          <div class="preview-bar">KELUZ MOTOR · CONCEPT</div>
+          <div class="preview-title">Ready to<br>Break Limits</div>
+          <div class="preview-line"></div>
+          <span class="preview-tag">Automotive Concept</span>
+        </div>
+        <div class="project-label">CONCEPT PREVIEW</div>
+        <h3>KELUZ Motor</h3>
+        <p class="muted">A concept for a future automotive brand and its online presence.</p>
+      </article>
+
+      <article class="card">
+        <div class="project-preview warm">
+          <div class="preview-bar">BUILDING MATERIALS</div>
+          <div class="preview-title">Quality Materials<br>For Every Project</div>
+          <div class="preview-line"></div>
+          <span class="preview-tag">Shop Website Demo</span>
+        </div>
+        <div class="project-label">DEMO CONCEPT</div>
+        <h3>Building Materials Shop</h3>
+        <p class="muted">A sample website concept for a local shop and its products.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="layout-two">
+      <div class="panel">
+        <div class="section-heading">
+          <div class="eyebrow">MY TOOLKIT</div>
+          <h2>Skills & Technologies</h2>
+        </div>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Acode</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">GitHub Pages</span>
+          <span class="skill">Responsive Design</span>
+        </div>
+        <p class="muted">My toolkit grows as I learn and build more projects.</p>
+      </div>
+      <div class="panel">
+        <div class="section-heading">
+          <div class="eyebrow">THE PROCESS</div>
+          <h2>How We Work</h2>
+        </div>
+        <p>01 — Discuss your idea and goals.</p>
+        <p>02 — Agree on the features, design and price.</p>
+        <p>03 — Build and review your website.</p>
+        <p>04 — Publish it when approved.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta">
+      <div class="eyebrow">HAVE A PROJECT IN MIND?</div>
+      <h2>Let's Build Something Great.</h2>
+      <p class="muted">Tell me about your business or website idea.</p>
+      <div class="contact-grid" style="text-align:left;margin:25px auto;max-width:750px">
+        <div class="panel">
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <div><strong>WhatsApp</strong><br>
+              <a href="https://wa.me/23280765919" target="_blank" rel="noopener noreferrer">Chat with KELUZ ↗</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <div><strong>Email</strong><br>
+              <a href="mailto:kelechikanukele033@gmail.com">Email KELUZ ↗</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">⌖</span>
+            <div><strong>Location</strong><br><span class="muted">Freetown, Sierra Leone</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Ready to get started?</h3>
+          <p class="muted">Send a message with the type of website you need, your goals and your preferred budget.</p>
+          <a class="btn" href="https://wa.me/23280765919" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</div>
+</main>
 
-    <section id="contact">
-      <h2>Let's Build Your Website</h2>
-      <div class="card" style="text-align:center">
-        <p class="muted">Need a website for your business? Contact KELUZ Web Development to discuss your project.</p>
-        <p>
-  WhatsApp:
-  <a href="https://wa.me/23280765919"
-     style="color:#42e8cf;"
-     target="_blank">
-    Chat with KELUZ
-  </a>
-	</p>
-	      <p>
-  Email:
-  <a href="mailto: kelechikanukele033@gmail.com
-     style="color:#42e8cf;">
-    Email KELUZ Web Development
-  </a>
-	      </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 KELUZ Web Development. All rights reserved.
-  </footer>
+<footer>
+  <div class="container">
+    <p><strong>KELUZ Web Development</strong> · Your Vision Online</p>
+    <p>© 2026 KELUZ Web Development. All rights reserved.</p>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
 </body>
-	</html>
-	
+</html>
+			
