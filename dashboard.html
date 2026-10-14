@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <title>KELUZ | Business Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h2>KELUZ <span>Dashboard</span></h2>
+    <a href="index.html">View Portfolio</a>
+  </header>
+
+  <main class="container">
+    <h1>Business Overview</h1>
+    <p>Manage your web development business.</p>
+
+    <section class="stats">
+      <article class="card">
+        <p>Total Clients</p>
+        <h2 id="clientCount">0</h2>
+      </article>
+      <article class="card">
+        <p>Projects</p>
+        <h2 id="projectCount">0</h2>
+      </article>
+      <article class="card">
+        <p>Total Income</p>
+        <h2 id="totalIncome">NLe 0.00</h2>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Add Client</h2>
+      <form id="clientForm">
+        <input id="clientName" placeholder="Client name" required>
+        <input id="clientContact" placeholder="Phone or email">
+        <button type="submit">Save Client</button>
+      </form>
+      <div id="clientList"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Add Project</h2>
+      <form id="projectForm">
+        <input id="projectName" placeholder="Project name" required>
+        <input id="projectClient" placeholder="Client name">
+        <input id="projectPrice" type="number" min="0" step="0.01"
+          placeholder="Price in NLe" required>
+        <select id="projectStatus">
+          <option>Pending</option>
+          <option>In Progress</option>
+          <option>Completed</option>
+        </select>
+        <button type="submit">Save Project</button>
+      </form>
+      <div id="projectList"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Income Records</h2>
+      <form id="incomeForm">
+        <input id="incomeSource" placeholder="Payment or project" required>
+        <input id="incomeAmount" type="number" min="0.01" step="0.01"
+          placeholder="Amount in NLe" required>
+        <button type="submit">Record Income</button>
+      </form>
+      <div id="incomeList"></div>
+    </section>
+
+    <p class="note">
+      Demo dashboard: records are stored in this browser on this device.
+      They are not automatically shared with other devices.
+    </p>
+  </main>
+</body>
+</html>
